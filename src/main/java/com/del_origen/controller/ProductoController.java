@@ -1,5 +1,6 @@
 package com.del_origen.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +20,17 @@ public class ProductoController {
 	@Autowired
 	private ProductoService productoService;
 	
-	@RequestMapping("/productos")
-    public String getAll(){
+	@RequestMapping("/producto")
+    public String getProducto(){
      // return productoService.getAll();
        return "hola mundo";
+    }
+	
+	@RequestMapping("/productos")
+    public ArrayList<String> getAll(){
+		ArrayList<String> lista= new ArrayList<String>();
+		lista.add("hola mundo");
+		lista.add("bien venidos");
+       return lista;
     }
 }
